@@ -1,0 +1,55 @@
+﻿@page
+@model WEB_TechnoV1_PatrickRibeiro.Pages.SkillList.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create" asp-route-id="@Request.Query["id"].ToString()">Create New Skill</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Skills[0].id_contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skills[0].skill)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skills[0].level)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@if (Model.Skills == null) { 
+        <tr><td><button onClick="window.location.href=window.location.href">Refresh Page</button></td></tr>
+}
+else
+{
+    @foreach (var item in Model.Skills)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_contact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.skill)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.level)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+    }
+}
+    </tbody>
+</table>

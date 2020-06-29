@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql.local",
+      "connectionId": "APIContext"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "APISKContext"
+    },
+    "mssql3": {
+      "type": "mssql.local",
+      "connectionId": "APISKILLSContext"
+    },
+    "mssql4": {
+      "type": "mssql.local",
+      "connectionId": "APISKILLListContext"
+    },
+    "mssql5": {
+      "type": "mssql.local",
+      "connectionId": "APISKKContext"
+    }
+  }
+}

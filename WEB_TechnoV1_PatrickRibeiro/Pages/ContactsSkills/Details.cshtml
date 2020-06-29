@@ -1,0 +1,61 @@
+﻿@page
+@model WEB_TechnoV1_PatrickRibeiro.Pages.ContactsSkills.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Contacts</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacts.id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacts.fullname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacts.firstname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacts.firstname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacts.lastname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacts.lastname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacts.password)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacts.password)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacts.adress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacts.adress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacts.email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacts.email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacts.mobilePhone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacts.mobilePhone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Contacts.id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

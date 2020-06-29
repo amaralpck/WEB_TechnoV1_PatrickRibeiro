@@ -1,0 +1,40 @@
+﻿@page
+@model WEB_TechnoV1_PatrickRibeiro.Pages.SkillList.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Skills</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Skills.id_contact)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Skills.id_contact)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Skills.skill)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Skills.skill)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Skills.level)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Skills.level)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Skills.id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index" asp-route-id="@Model.Skills.id_contact">Back to List</a>
+    </form>
+</div>

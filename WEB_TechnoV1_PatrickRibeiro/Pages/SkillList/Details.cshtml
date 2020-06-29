@@ -1,0 +1,37 @@
+﻿@page
+@model WEB_TechnoV1_PatrickRibeiro.Pages.SkillList.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Skills</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Skills.id_contact)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Skills.id_contact)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Skills.skill)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Skills.skill)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Skills.level)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Skills.level)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Skills.id">Edit</a> |
+    <a asp-page="./Index" asp-route-id="@Model.Skills.id_contact">Back to List</a>
+</div>

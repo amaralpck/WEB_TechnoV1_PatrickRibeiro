@@ -1,0 +1,78 @@
+﻿@page
+@model WEB_TechnoV1_PatrickRibeiro.Pages.ContactsSkills.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New Contact</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacts[0].fullname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacts[0].firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacts[0].lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacts[0].password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacts[0].adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacts[0].email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacts[0].mobilePhone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@if (Model.Contacts == null) {
+    <tr><td><button onClick="window.location.href=window.location.href">Refresh Page</button></td></tr>
+
+} else {
+    @foreach (var item in Model.Contacts) {
+        <tr>
+            <td>
+                <a asp-page="../SkillList/Index" asp-route-id="@item.id">@Html.DisplayFor(modelItem => item.fullname)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mobilePhone)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+    }
+}
+    </tbody>
+</table
+
